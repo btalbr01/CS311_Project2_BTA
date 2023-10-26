@@ -43,10 +43,10 @@ namespace CS311_Project2_BTA
                 lblBalance.Text = balance.ToString("C");
             }//end if
 
-            //Checks if roll matches the point and the roll is not 7.
+            //Checks if roll matches the point.
             //Outputs win text, resets roll count and point,
             //updates balance and outputs to lblBalance as a dollar amount.
-            if (roll1 + roll2 == point && point != 7)
+            if (roll1 + roll2 == point)
             {
                 lblWinLosePoint.Text = "You win!";
                 rollCount = 0;
@@ -109,6 +109,7 @@ namespace CS311_Project2_BTA
             else if (txtBet.Text != "" && float.Parse(txtBet.Text) <= balance)
 
                 calculate_score(); //end if
+
             //If there is not enough money in the bank, notifies user.
             else if (float.Parse(txtBet.Text) > balance)
                 MessageBox.Show("Not enough money in the bank!"); // end else if
